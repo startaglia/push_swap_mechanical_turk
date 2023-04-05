@@ -12,24 +12,6 @@
 
 #include "../incl/push_swap.h"
 
-// void	ft_is_valid_num(char **av, int j)
-// {
-// 	int		z;
-
-// 	z = 0;
-// 	while (av[j][z])
-// 	{
-// 		if (((av[j][z] == '-') && (!ft_isdigit(av[j][z + 1])))
-// 		|| ((av[j][z] == '+') && (!ft_isdigit(av[j][z + 1]))))
-// 			ft_print_error();
-// 		if ((ft_isdigit(av[j][z])) || (av[j][z] == 32)
-// 			|| (av[j][z] == '-') || (av[j][z] == '+'))
-// 			z++;
-// 		else
-// 			ft_print_error();
-// 	}
-// }
-
 int	check_a_input_num(t_data *data)
 {
 	if (data->len_a <= 3)
