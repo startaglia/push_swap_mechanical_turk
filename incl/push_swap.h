@@ -6,7 +6,7 @@
 /*   By: startagl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:10:04 by startagl          #+#    #+#             */
-/*   Updated: 2023/04/05 15:47:54 by startagl         ###   ########.fr       */
+/*   Updated: 2023/04/05 16:06:02 by startagl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "ft_printf/ft_printf.h"
+# include "get_next_line/get_next_line.h"
 
 # include <stdarg.h>
 # include <stdio.h>
