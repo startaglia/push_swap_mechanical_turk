@@ -6,7 +6,7 @@
 /*   By: startagl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 16:01:11 by startagl          #+#    #+#             */
-/*   Updated: 2023/04/07 14:14:04 by startagl         ###   ########.fr       */
+/*   Updated: 2023/04/07 16:41:54 by startagl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,20 +64,23 @@ int	main(int ac, char *av[])
 	t_data	*data;
 	char	*move;
 
-	(void)ac;
-	data = malloc(sizeof(t_data));
-	initialize_val(data, av, 1);
-	move = get_next_line(0);
-	while (move)
+	if (ac > 1)
 	{
-		check_move(move, data);
-		free(move);
+		data = malloc(sizeof(t_data));
+		initialize_val(data, av, 1);
 		move = get_next_line(0);
+		while (move)
+		{
+			check_move(move, data);
+			free(move);
+			move = get_next_line(0);
+		}
+		free(move);
+		if (check_start_sorted(data) && data->len_b == 0)
+			ft_printf("OK\n");
+		else
+			ft_printf("KO\n");
+		ft_free_data(data);
 	}
-	free(move);
-	if (check_start_sorted(data) && data->len_b == 0)
-		ft_printf("OK\n");
-	else
-		ft_printf("KO\n");
-	ft_free_data(data);
+	return (0);
 }
