@@ -6,7 +6,7 @@
 /*   By: startagl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 12:20:03 by startagl          #+#    #+#             */
-/*   Updated: 2023/04/05 15:05:03 by startagl         ###   ########.fr       */
+/*   Updated: 2023/04/07 13:00:51 by startagl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,21 +39,24 @@ int	get_input_num(char **av)
 	return (counter);
 }
 
-void	ft_ready_to_start(t_data *data)
+void	ft_ready_to_start(t_data *data, int f)
 {
-	if (!(check_a_input_num(data)))
+	if (f == 0)
 	{
-		if (data->len_a == 2 && !check_start_sorted(data))
+		if (!(check_a_input_num(data)))
 		{
-			swap_a(data, 1);
-			exit(0);
+			if (data->len_a == 2 && !check_start_sorted(data))
+			{
+				swap_a(data, 1);
+				exit(0);
+			}
+			else if (data->len_a == 3 && !check_start_sorted(data))
+			{
+				three_sort(data);
+				exit(0);
+			}
+			else
+				exit(0);
 		}
-		else if (data->len_a == 3 && !check_start_sorted(data))
-		{
-			three_sort(data);
-			exit(0);
-		}
-		else
-			exit(0);
-	}	
+	}
 }

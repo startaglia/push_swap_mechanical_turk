@@ -6,7 +6,7 @@
 /*   By: startagl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 09:58:47 by robegarc          #+#    #+#             */
-/*   Updated: 2023/04/05 16:19:30 by startagl         ###   ########.fr       */
+/*   Updated: 2023/04/07 12:46:14 by startagl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*ft_sjoin(char *s1, char *s2)
 	}
 	if (!s2)
 		return (NULL);
-	out = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	out = (char *)malloc(sizeof(char) * (ft_slen(s1) + ft_slen(s2) + 1));
 	if (!out)
 		return (NULL);
 	i = 0;

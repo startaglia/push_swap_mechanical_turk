@@ -6,7 +6,7 @@
 /*   By: startagl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 16:01:11 by startagl          #+#    #+#             */
-/*   Updated: 2023/04/05 16:30:33 by startagl         ###   ########.fr       */
+/*   Updated: 2023/04/07 14:14:04 by startagl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,41 +30,43 @@ int	esc_error(t_data *data)
 	exit(0);
 }
 
-int	check_move(char *move, int data)
+int	check_move(char *move, t_data *data)
 {
-	if (!ft_strcmp(move, "sa\n"))
+	if (ft_strcmp(move, "sa\n") == 0)
 		swap_a(data, 0);
-	if (!ft_strcmp(move, "sb\n"))
+	else if (ft_strcmp(move, "sb\n") == 0)
 		swap_b(data, 0);
-	if (!ft_strcmp(move, "ss\n"))
-		swap_s(data, 0);
-	if (!ft_strcmp(move, "pa\n"))
+	else if (ft_strcmp(move, "ss\n") == 0)
+		swap_ss(data, 0);
+	else if (ft_strcmp(move, "pa\n") == 0)
 		push_a(data, 0);
-	if (!ft_strcmp(move, "pb\n"))
+	else if (ft_strcmp(move, "pb\n") == 0)
 		push_b(data, 0);
-	if (!ft_strcmp(move, "ra\n"))
+	else if (ft_strcmp(move, "ra\n") == 0)
 		rotate_a(data, 0);
-	if (!ft_strcmp(move, "rb\n"))
+	else if (ft_strcmp(move, "rb\n") == 0)
 		rotate_b(data, 0);
-	if (!ft_strcmp(move, "rr\n"))
+	else if (ft_strcmp(move, "rr\n") == 0)
 		rotate_rr(data, 0);
-	if (!ft_strcmp(move, "rra\n"))
+	else if (ft_strcmp(move, "rra\n") == 0)
 		reverse_rotate_a(data, 0);
-	if (!ft_strcmp(move, "rrb\n"))
+	else if (ft_strcmp(move, "rrb\n") == 0)
 		reverse_rotate_b(data, 0);
-	if (!ft_strcmp(move, "rrr\n"))
+	else if (ft_strcmp(move, "rrr\n") == 0)
 		reverse_rotate_rrr(data, 0);
 	else
 		esc_error(data);
+	return (0);
 }
 
-int main(int ac, char *av[])
+int	main(int ac, char *av[])
 {
 	t_data	*data;
 	char	*move;
 
+	(void)ac;
 	data = malloc(sizeof(t_data));
-	initialize_val(data, av);
+	initialize_val(data, av, 1);
 	move = get_next_line(0);
 	while (move)
 	{

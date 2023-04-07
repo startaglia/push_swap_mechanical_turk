@@ -6,7 +6,7 @@
 /*   By: startagl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:10:04 by startagl          #+#    #+#             */
-/*   Updated: 2023/04/05 16:06:02 by startagl         ###   ########.fr       */
+/*   Updated: 2023/04/07 12:59:05 by startagl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,14 +91,16 @@ void	cicle_a(t_data *data);
 void	ft_sorting(t_data *data, int f);
 void	init_moves(t_data *data);
 void	cicle_b(t_data *data);
-void	ft_ready_to_start(t_data *data);
+void	ft_ready_to_start(t_data *data, int f);
 void	three_sort(t_data *data);
 void	upper_half_utils_b(t_data *data, int i, int temp_moves);
 void	upper_half_a_utils(t_data *data, int i, int temp_moves);
 void	lower_half_utils_b(t_data *data, int i, int temp_moves);
 void	lower_half_a_utils(t_data *data, int i, int temp_moves);
 void	different_half_utils_b(t_data *data, int i, int temp_moves);
+void	do_the_shit(t_data *data);
 void	different_half_a_utils(t_data *data, int i, int temp_moves);
+int		initialize_val(t_data *data, char *av[], int f);
 int		find_major_a(t_data *data, int i);
 int		find_minor_a(t_data *data, int i);
 int		find_minor_b(t_data *data, int i);
@@ -107,7 +109,7 @@ int		check_double(t_data *data);
 int		ft_free_mem(char **matrix, int f);
 int		ft_isdigit(int c);
 int		ft_atoi(char *str);
-int		check_start_sorted(t_data	*data);
+int		check_start_sorted(t_data *data);
 int		check_a_input_num(t_data *data);
 int		check_a_max_num(t_data *data);
 int		check_a_min_num(t_data *data);

@@ -17,6 +17,8 @@
 # include <fcntl.h>
 # include <unistd.h>
 
+# define BUFFER_SIZE 1
+
 char	*ft_sjoin(char *s1, char *s2);
 char	*get_line(int fd, char *line);
 char	*ft_schr(char *s, int c);
